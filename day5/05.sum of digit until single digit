@@ -1,0 +1,7 @@
+def digital_root(n):
+    n = sum(int(digit) for digit in str(n))
+    return n
+result=digital_root(16)
+print(result)
+OUTPUT:
+7
