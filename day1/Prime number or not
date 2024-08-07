@@ -1,16 +1,28 @@
-CODES:
-num = int(input("Enter a number: "))
-
-if num <= 1:
-    print(num, "is not a prime number.")
-else:
+def is_prime(num):
+    if num <= 1:
+        return False
     for i in range(2, num):
         if num % i == 0:
-            print(num, "is not a prime number.")
-            break
-    else:
-        print(num, "is a prime number.")
+            return False
+    return True
 
-OUTPUT:
-Enter a number: 29
-29 is a prime number.
+def count_primes_and_composites(numbers):
+    primes = 0
+    composites = 0
+    
+    for num in numbers:
+        if is_prime(num):
+            primes += 1
+        elif num > 1:
+            composites += 1
+    
+    return primes, composites
+
+# Input numbers from the user
+user_input = input("Enter numbers separated by spaces: ")
+numbers = list(map(int, user_input.split()))
+
+primes, composites = count_primes_and_composites(numbers)
+
+print(f"Prime numbers: {primes}")
+print(f"Composite numbers: {composites}")
