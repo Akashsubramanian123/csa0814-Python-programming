@@ -5,24 +5,22 @@ def is_prime(num):
         if num % i == 0:
             return False
     return True
-
 def count_primes_and_composites(numbers):
     primes = 0
     composites = 0
-    
     for num in numbers:
         if is_prime(num):
             primes += 1
         elif num > 1:
             composites += 1
-    
     return primes, composites
-
-# Input numbers from the user
 user_input = input("Enter numbers separated by spaces: ")
 numbers = list(map(int, user_input.split()))
-
 primes, composites = count_primes_and_composites(numbers)
-
 print(f"Prime numbers: {primes}")
 print(f"Composite numbers: {composites}")
+Input:
+Enter numbers separated by spaces: 2 3 4 5 6 7 8 9 10
+Output:
+Number of prime numbers: 4
+Number of composite numbers: 5
